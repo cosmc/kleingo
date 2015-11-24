@@ -23,6 +23,8 @@ def main(args):
         board_img = pygame.image.load("empty_board.png").convert(32)
     elif len(board) == 13:
         board_img = pygame.image.load("empty_board13.png").convert(32)
+    elif len(board) == 9:
+        board_img = pygame.image.load("empty_board9.png").convert(32)
 
     # Determine dimensions of grid and pieces.
     board_width, board_height = board_img.get_width(), board_img.get_height()
@@ -35,10 +37,20 @@ def main(args):
                 continue
             elif board[i][j] == 'r':
                 piece_color = (255,0,0)
+            elif board[i][j] == 'g':
+                piece_color = (0,255,0)
+            elif board[i][j] == 'u':
+                piece_color = (0,0,255)
             elif board[i][j] == 'w':
                 piece_color = (255,255,255)
             elif board[i][j] == 'b':
                 piece_color = (0,0,0)
+            elif board[i][j] == 'c':
+                piece_color = (0,255,255)
+            elif board[i][j] == 'm':
+                piece_color = (255,0,255)
+            elif board[i][j] == 'y':
+                piece_color = (255,255,0)
             pygame.draw.circle(
                 board_img,
                 piece_color,
